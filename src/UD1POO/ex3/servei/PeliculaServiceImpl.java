@@ -4,6 +4,7 @@ import UD1POO.ex3.model.Pelicula;
 import UD1POO.ex3.repositori.PeliculaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class PeliculaServiceImpl implements PeliculaService{
     PeliculaRepository peliculaRepository;
@@ -27,5 +28,10 @@ public class PeliculaServiceImpl implements PeliculaService{
     List<String>titolsPerDirector(String director){
         return peliculaRepository.obtenirTotes().stream().filter(p->p.getDirector().equals(director))
                 .map(pelicula -> pelicula.getTitol()).sorted().toList();
+    }
+    Pelicula obtenirPerTitol(String titol){
+        return  peliculaRepository
+                .cercarPerTitol(titol)
+                .orElseThrow(() -> new IllegalArgumentException("prueba"));
     }
 }
