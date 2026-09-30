@@ -12,7 +12,7 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
 
     @Override
     public List<Pelicula> obtenirTotes() {
-        return List.of();
+        return peliculas;
     }
 
     @Override

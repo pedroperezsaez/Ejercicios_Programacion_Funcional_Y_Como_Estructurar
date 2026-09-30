@@ -5,4 +5,9 @@ public class NotificacioEmailSimulat implements  Notificacio {
         System.out.println("Enviant email: "+ missatge);
     }
 
+    @Override
+    public void enviarMayuscula(String missatge) {
+
+    }
+
 }
